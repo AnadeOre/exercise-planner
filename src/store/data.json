@@ -1,0 +1,22 @@
+{
+  "exercises": [
+    {
+      "title": "Lorem Ipsum",
+      "details": "Lorem Ipsdfsdsum",
+      "complete": false,
+      "id": 7581
+    },
+    {
+      "title": "nuevo prueba",
+      "details": "just testing\n",
+      "complete": true,
+      "id": 7582
+    },
+    {
+      "title": "nuevo prueba",
+      "details": "just testing\n",
+      "complete": true,
+      "id": 7583
+    }
+  ]
+}
