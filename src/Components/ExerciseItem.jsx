@@ -4,25 +4,12 @@ import './ExerciseItem.css';
 
 export const ExerciseItem = props => {
 	const performExerciseDeletion = () => {
-		fetch(`http://localhost:3111/exercises/${props.exercise.id}`, {
-			method: 'DELETE',
-		})
-			.then(() => {
-				props.onDeleteExercise(props.exercise.id);
-			})
-			.catch(error => console.log(error));
+		console.log(props.exercise.id);
+		props.onDeleteExercise(props.exercise.id);
 	};
 
 	const performExerciseToggle = () => {
-		fetch(`http://localhost:3111/exercises/${props.exercise.id}`, {
-			method: 'PATCH',
-			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify({ complete: !props.exercise.complete }),
-		})
-			.then(() => {
-				props.onToggleExercise(props.exercise.id);
-			})
-			.catch(error => console.log(error));
+		props.onToggleExercise(props.exercise.id);
 	};
 
 	const classes = ['exercise'];

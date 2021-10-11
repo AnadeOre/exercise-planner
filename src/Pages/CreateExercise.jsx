@@ -23,17 +23,10 @@ export const CreateExercise = () => {
 			title: exercise.title,
 			details: exercise.details,
 			complete: false,
-			id: Math.floor(Math.random * 10000),
+			id: Math.floor(Math.random() * 10000),
 		};
-		fetch('http://localhost:3111/exercises', {
-			method: 'POST',
-			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify(newExercise),
-		})
-			.then(() => {
-				history.push('/home');
-			})
-			.catch(error => console.log(error));
+		localStorage.setItem(`EXERCISE-PLANNER-${newExercise.id}`, JSON.stringify(newExercise));
+		history.push('/home');
 	};
 
 	return (

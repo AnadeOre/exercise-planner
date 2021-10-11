@@ -20,26 +20,14 @@ export const EditExercise = () => {
 	};
 
 	useEffect(() => {
-		fetch(`http://localhost:3111/exercises/${exerciseId}`)
-			.then(response => response.json())
-			.then(data =>
-				setexercise({
-					title: data.title,
-					details: data.details,
-				})
-			)
-			.catch(error => console.log(error));
+		const fetchedExercise = JSON.parse(localStorage.getItem(`EXERCISE-PLANNER-${exerciseId}`));
+		setexercise(fetchedExercise);
 	}, [exerciseId]);
 
 	const handleExerciseEdition = e => {
 		e.preventDefault();
-		fetch(`http://localhost:3111/exercises/${exerciseId}`, {
-			method: 'PATCH',
-			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify(exercise),
-		})
-			.then(() => history.push('/home'))
-			.catch(error => console.log(error));
+		localStorage.setItem(`EXERCISE-PLANNER-${exerciseId}`, JSON.stringify(exercise));
+		history.push('/home');
 	};
 
 	return (

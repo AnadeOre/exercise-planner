@@ -11,32 +11,31 @@ const HomePage = () => {
 	};
 
 	useEffect(() => {
-		async function fetchExercises() {
-			try {
-				const response = await fetch('http://localhost:3111/exercises');
-				const fetchedExercises = await response.json();
-				console.log('Exercises fetched ', fetchedExercises);
-				setexercises(fetchedExercises);
-			} catch (error) {
-				console.log(error);
+		var exercisesInStorage = [],
+			keys = Object.keys(localStorage),
+			i = keys.length;
+
+		while (i--) {
+			if (localStorage.key(i).startsWith('EXERCISE-PLANNER')) {
+				let localStorageItem = JSON.parse(localStorage.getItem(localStorage.key(i)));
+				exercisesInStorage.push(localStorageItem);
 			}
 		}
-		fetchExercises();
+		setexercises(exercisesInStorage);
 	}, []);
 
 	const deleteExerciseHandler = id => {
-		const patchedExercises = exercises.filter(exercise => exercise.id !== id);
-		setexercises(patchedExercises);
+		const key = `EXERCISE-PLANNER-${id}`;
+		localStorage.removeItem(key);
+		window.location.reload();
 	};
 
 	const toggleExerciseHandler = id => {
-		const clonedExercises = [...exercises];
-		const clickedExerciseIndex = clonedExercises.findIndex(exercise => exercise.id === id);
-		const clickedExercise = clonedExercises[clickedExerciseIndex];
-
-		clickedExercise.complete = !clickedExercise.complete;
-
-		setexercises(clonedExercises);
+		const key = `EXERCISE-PLANNER-${id}`;
+		let copyExercise = JSON.parse(localStorage.getItem(key));
+		copyExercise.complete = !copyExercise.complete;
+		localStorage.setItem(key, JSON.stringify(copyExercise));
+		window.location.reload();
 	};
 
 	let jsx = (
