@@ -1,13 +1,15 @@
 .exercise {
 	margin: 20px auto;
+	padding: 5px 5px;
 	background: white;
-	padding: 10px 20px;
 	border-radius: 10px;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-	border-left: 10px solid var(--pink);
+	border-left: 10px solid var(--red);
+	border-right: 1px solid #cccccc;
+	border-top: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
 }
 .exercise:hover {
-	box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.9);
+	box-shadow: -3px 3px 5px 3px #a09f9f;
 }
 h3 {
 	cursor: pointer;
@@ -23,17 +25,18 @@ h3 {
 .buttons {
 	display: flex;
 	flex-direction: column;
+	margin-top: 6%;
 }
 .buttons button,
 a {
+	font: 400 16px/1.5 exo, ubuntu, 'segoe ui', helvetica, arial, sans-serif;
 	color: white;
-	background: var(--pink);
-	padding: 0.5rem;
+	background: var(--blue);
 	border: 0;
 	border: 2px solid transparent;
 	text-decoration: none;
-	font-weight: 600;
-	font-size: 2rem;
+	font-weight: 500;
+	font-size: 16px;
 	margin-bottom: 5px;
 	border-radius: 6px;
 }
@@ -41,9 +44,17 @@ a {
 a:hover,
 button:active,
 a:active {
-	background: rgb(225, 127, 143);
+	background: #028ea7;
 }
 h4 {
+	text-transform: capitalize;
+	margin: 2px auto;
 	transform: skew(-21deg);
 	background: var(--golden);
+}
+p {
+	text-align: left;
+	margin-top: -10px;
+	margin-left: 20px;
+	width: 80%;
 }

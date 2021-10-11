@@ -6,10 +6,10 @@
 	display: inline-block;
 	text-decoration: none;
 	margin: 0 10px;
-	color: goldenrod;
+	color: white;
 	font-size: 20px;
 }
 .active-style {
-	border-bottom: 2px solid goldenrod;
+	border-bottom: 2px solid #028ea7;
 	padding-bottom: 4px;
 }
