@@ -17,9 +17,9 @@ Filter to only see those that you have completed
 Or those you havent
 ![Pending](./Assets/Pending.png)
 
-## Live version
+## Live version 📡
 
-Not availiable yet!
+Check out the live version [here](https://explanner.netlify.app/)
 
 ## DB
 
