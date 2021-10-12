@@ -27,7 +27,7 @@ export const EditExercise = () => {
 	const handleExerciseEdition = e => {
 		e.preventDefault();
 		localStorage.setItem(`EXERCISE-PLANNER-${exerciseId}`, JSON.stringify(exercise));
-		history.push('/home');
+		history.push('/');
 	};
 
 	return (
