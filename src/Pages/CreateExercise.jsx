@@ -26,7 +26,7 @@ export const CreateExercise = () => {
 			id: Math.floor(Math.random() * 10000),
 		};
 		localStorage.setItem(`EXERCISE-PLANNER-${newExercise.id}`, JSON.stringify(newExercise));
-		history.push('/home');
+		history.push('/');
 	};
 
 	return (
